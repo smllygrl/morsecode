@@ -1,4 +1,4 @@
-const english = {
+export const english = {
   a: ".-",
   b: "-...",
   c: "-.-.",
