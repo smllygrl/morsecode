@@ -1,0 +1,42 @@
+* {
+  font-family: sans-serif;
+}
+
+.container {
+  border: 1px solid hotpink;
+  width: 500px;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  &__h1 {
+    text-align: center;
+  }
+}
+
+.translators {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  flex-direction: column;
+  &__inputEnglish {
+    border: 1px solid black;
+    padding: 15px;
+    width: 250px;
+  }
+  &__inputMorse {
+    border: 1px solid black;
+    padding: 15px;
+    width: 250px;
+  }
+}
