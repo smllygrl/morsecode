@@ -1,16 +1,16 @@
 * {
-  font-family: sans-serif;
+  font-family: "Courier New", Courier, monospace;
 }
 
 .container {
-  border: 1px solid hotpink;
-  width: 500px;
-  height: 600px;
   display: flex;
   flex-direction: column;
   padding: 20px;
   align-items: center;
   justify-content: center;
+  border: 1px solid black;
+  width: 700px;
+  border-radius: 7px;
 }
 
 .header {
@@ -21,22 +21,49 @@
   &__h1 {
     text-align: center;
   }
+  &__divider {
+    width: 740px;
+    height: 20px;
+    background: linear-gradient(
+      90deg,
+      rgba(131, 58, 180, 1) 0%,
+      rgba(253, 29, 29, 1) 50%,
+      rgba(252, 176, 69, 1) 100%
+    );
+  }
+}
+
+.button {
+  margin: 20px;
+  background-color: white;
+  border: solid 1px black;
+  padding: 7px;
+  border-radius: 7px;
 }
 
 .translators {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   flex-wrap: wrap;
-  flex-direction: column;
   &__inputEnglish {
+    display: flex;
+    flex-direction: column;
     border: 1px solid black;
+    border-radius: 7px;
     padding: 15px;
     width: 250px;
+    margin: 10px;
+    height: 400px;
   }
   &__inputMorse {
+    display: flex;
+    flex-direction: column;
     border: 1px solid black;
+    border-radius: 7px;
     padding: 15px;
     width: 250px;
+    margin: 10px;
+    height: 400px;
   }
 }

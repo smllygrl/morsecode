@@ -5,36 +5,48 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="morse.js" defer></script>
-    <link rel="stylesheet" href="morse.css">
+    <link rel="stylesheet" href="morse.css" />
     <title>Morse Code Translator</title>
   </head>
   <body>
     <div class="container">
-    <div class="header">
-    <h1 class="header_h1">Translator: English & Morse Code</h1>
-    <button id="clearAll">Clear All</button>
+      <div class="header">
+        <h1 class="header_h1">Translator: English & Morse Code</h1>
+        <button class="button" id="clearAll">CLEAR ALL</button>
+        <div class="header__divider"></div>
+      </div>
+
+      <br />
+
+      <div class="translators">
+        <div class="translators__inputEnglish">
+          <textarea
+            id="englishInput"
+            placeholder="Enter English in here"
+          ></textarea>
+          <button class="button" id="engToMorseBtn">English to Morse</button>
+          <p>
+            Translation: Each character in Morse will be seperated by a space
+            and each word will also be seperated by a space this does not work
+            well
+          </p>
+          <div id="outputMorse"></div>
+        </div>
+        <br />
+        <br />
+        <div class="translators__inputMorse">
+          <textarea
+            id="morseInput"
+            placeholder="Enter Morse in here "
+          ></textarea>
+          <button class="button" id="morseToEngBtn">Morse to English</button>
+          <p>
+            Input: Please seperate each Morse character with a space and each
+            word with a /
+          </p>
+          <div id="outputEnglish"></div>
+        </div>
+      </div>
     </div>
-
-    <br>
-
-    <div class="translators">
-
-    <div class="translators__inputEnglish">
-       <input id="englishInput" placeholder="Enter English in here"></input>
-       <button id="engToMorseBtn">English to Morse</button>
-        <p>Translation: Each character in Morse will be seperated by a space and each word will also be seperated by a space this does not work well</p>
-        <div id="outputMorse"></div>
-    </div>
-    <br>
-    <br>
-    <div class="translators__inputMorse">
-       <input id="morseInput" placeholder="Enter Morse in here "></input>
-       <button id="morseToEngBtn">Morse to English</button>
-       <p>Input: Please seperate each Morse character with a space and each word with a /</p>
-       <div id="outputEnglish"></div>
-   </div>
-
-   </div>
-   </div>
   </body>
 </html>

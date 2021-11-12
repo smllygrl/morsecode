@@ -29,6 +29,7 @@ const english = {
   x: "-..-",
   y: "-.--",
   z: "--..",
+  " ": " / ",
 };
 
 const morse = {
@@ -58,6 +59,7 @@ const morse = {
   "-..-": "x",
   "-.--": "y",
   "--..": "z",
+  "/": " ",
 };
 
 // Declaring Buttons
@@ -69,11 +71,18 @@ const clearBtn = document.getElementById("clearAll");
 const resultDivEng = document.getElementById("outputEnglish");
 const resultDivMorse = document.getElementById("outputMorse");
 
+// Declaring Errors
+const englishError =
+  "Invalid input detected,English only takes the letters a-z, A-Z and spaces";
+const morseError =
+  "Invalid input detected, please follow Morse input directions";
+
 // Event Listeners / Declaring Input Areas
 enToMoBtn.addEventListener("click", () => {
   console.log("English to Morse Button Clicked");
-  const engString = document.querySelector("#englishInput").value;
+  const engString = document.querySelector("#englishInput").value.toLowerCase();
   console.log(engString);
+  testFunc(engString, english, englishError);
   translate(engString, "", english, "  ", resultDivMorse);
 });
 
@@ -81,17 +90,35 @@ moToEnBtn.addEventListener("click", () => {
   console.log("Morse to English Button Clicked");
   const morString = document.querySelector("#morseInput").value;
   console.log(morString);
+  testFunc(morString, morse, morseError);
   translate(morString, " ", morse, "", resultDivEng);
 });
 
+// This doesn't work, I think my for loop is shit
+const testFunc = (string, langObj, error) => {
+  let testArr = string.split(" ");
+  // for (let i = 0; (i = testArr.length); i++) {
+  //   if (langObj.hasOwnProperty(i)) {
+  //     throw Error(`${error}`);
+  //   }
+  // }
+};
+
 clearBtn.addEventListener("click", () => {
-  console.log("Clear had been pressed");
+  console.log("Clear has been pressed");
   document.querySelector("#morseInput").value = null;
   document.querySelector("#englishInput").value = null;
   location.reload();
 });
 
-// My three function babies
+// I forgot how to move this funciton outside of the translate func
+const appendFunction = (translation, resultDiv) => {
+  const transElem = document.createElement("p");
+  const transText = document.createTextNode(`Translation: ${translation}`);
+  transElem.appendChild(transText);
+  resultDiv.appendChild(transElem);
+  return resultDiv;
+};
 
 const translate = (inputStr, splitParam, langObj, joinParam, resultDiv) => {
   let splitString = inputStr
@@ -103,24 +130,6 @@ const translate = (inputStr, splitParam, langObj, joinParam, resultDiv) => {
 };
 
 const mapFunc = (key, langObj) => {
-  if (langObj.hasOwnProperty(key)) {
-    console.log("Found a match!");
-    console.log(langObj[key]);
-    let newValue = langObj[key];
-    console.log(newValue);
-    return newValue;
-  } else {
-    throw new Error(
-      "Please have a valid input(Morse: . - / & English: a-z A-Z)"
-    );
-    console.log("ERROR: please have a valid input");
-  }
-};
-
-const appendFunction = (translation, resultDiv) => {
-  const transElem = document.createElement("p");
-  const transText = document.createTextNode(`Translation: ${translation}`);
-  transElem.appendChild(transText);
-  resultDiv.appendChild(transElem);
-  return resultDiv;
+  let newValue = langObj[key];
+  return newValue;
 };
