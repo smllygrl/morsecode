@@ -1,10 +1,18 @@
-# morsecode
+# Morse Code Translator
 
-Project: Create A Morse Code Translator
-MVP:
-Morse Code Project
-Create a user interface that allows the user to either input some English text or some Morse Code
-Create JS functions that would allow the user to translate their English text into Morse Code or Morse Code into English text
-Make sure to handle spaces properly (ie. there is 1 space between English words, but one space between Morse Code characters)
-Write tests for all functions that don't interact with the dom
-Give users feedback when something goes wrong
+This was the third challenge given to us at _nology.
+
+Our build had to translate English to Morse Code and vice versa.
+
+We were also required to build in testing with use of Jest.
+
+I am really proud of my code on this build.
+
+The main learnings I have had during this project are --
++ You can't test functions which interact with the DOM
++ Utilising the DOM in rendering information
++ Mapping through objects
++ General JavaScript competency
+
+Items to be refined in my Translator --
++ Re-factor code so that it does not interact with the DOM, so testing can be implemented
